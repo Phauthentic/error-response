@@ -54,7 +54,7 @@ class ErrorResponseMiddleware implements MiddlewareInterface
 
     protected function errorResponseToJson(ErrorResponseInterface $errorResponse): string
     {
-        return json_encode($errorResponse, JSON_THROW_ON_ERROR);
+        return json_encode($errorResponse->toArray(), JSON_THROW_ON_ERROR);
     }
 
     public function createResponse(ErrorResponseInterface $errorResponse): ResponseInterface
